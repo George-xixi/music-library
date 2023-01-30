@@ -11,10 +11,10 @@ describe('create artist', () => {
           name: 'Tame Impala',
           genre: 'rock',
         });
-
         expect(status).to.equal(201);
         expect(body.name).to.equal('Tame Impala');
         expect(body.genre).to.equal('rock');
+
         const {
           rows: [artistData],
         } = await db.query(`SELECT * FROM Artists WHERE id = $1`, [body.id]);

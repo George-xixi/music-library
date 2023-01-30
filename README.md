@@ -1,19 +1,89 @@
 # George's Music Library Project
 
-## Description
-In this project, I will be learning how to use PostgreSQL, Docker, pgAdmin4 alongside Express.js to create an API that allows for CRUD interactions with a PostgreSQL databse.
+## Introduction
 
-Using TDD, I have created an API that allows a user to add artists and albums to a music library database. The user could then search for items in the library, edit the details, and delete items from the library.
+This is a music libary API built with NODE JS, Express, interacting with PostgreSQL. The user can create, read, update and delete both artists and albums in the database. This project does not have a GUI, I reccomend using postman to [Postman](https://www.postman.com/downloads/) to interact with the API.
 
-## Download Instructions
-- Fork this repo
+
+## Quick Start and Commands
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/george-xixi/music-library.git
 ```
-git clone https://github.com/George-xixi/music-library
+2. Initialise npm:
+
+```bash
+npm init
 ```
+
+3. Install dev dependecies
+
+The relevant dev dependencies are:
+
+```bash
+npm i -D dotenv
 ```
-npm install
+```bash
+npm i -D chai
 ```
 
+```bash
+npm i -D mocha
+```
+```bash
+npm i -D supertest
+```
+4. Create file with enviroment variables 
+
+create .env and .env.test file in root directory 
+```bash
+touch .env
+```
+
+```bash
+touch .env.test
+```
+
+In the .env files, these are the variables you need:
+PGUSER=
+PGHOST=
+PGPASSWORD=
+PGDATABASE=(make sure this is different in .env and .env.test)
+PGPORT=
+PORT=(optional, but this will default to 4000 if you don't choose)
+
+5. To run tests:
+
+```bash
+npm test
+```
+
+4. Download Postman and pgAdmin 
+
+- [Postman](https://www.postman.com/downloads/)
+- [pgAdmin](https://www.pgadmin.org/download/)
 
 
+## API Endpoints and Methods
 
+Artists endpoints and methods
+
+| **Methods** |   **Urls**   |     **Actions**      |
+| :---------- | :----------: | :------------------: |
+| GET         |   /artists   |   get all artists    |
+| GET         | /artists/:id |   get artist by id   |
+| POST        |   /artists   |    add new artist    |
+| PUT         | /artists/:id | update artist by id  |
+| DELETE      | /artists/:id | remove artists by id |
+
+Albums endpoints and methods
+
+| **Methods** |        **Urls**         |              **Actions**              |
+| :---------- | :---------------------: | :-----------------------------------: |
+| GET         |         /albums         |            get all albums             |
+| GET         |       /albums/:id       |            get album by id            |
+| POST        | /artists/:artistId/album| add new albums to the specific artist |
+| PUT         |       /albums/:id       |          update album by id           |
+| DELETE      |       /albums/:id       |          remove album by id           |

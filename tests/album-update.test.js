@@ -16,14 +16,14 @@ describe('Update Albums', () => {
 
     artists = responses.map(({ rows }) => rows[0]);
 
-    const albums_responses = await Promise.all([
+    const albumsResponses = await Promise.all([
       db.query(
         'INSERT INTO Albums (id, artist_id, name, year) VALUES ($1, $2, $3, $4) RETURNING *',
         [1, artists[0].id, 'Currents', 2015]
       ),
     ]);
 
-    album = albums_responses.map(({ rows }) => rows[0]);
+    album = albumsResponses.map(({ rows }) => rows[0]);
   });
 
   describe('PATCH /albums/{id}', () => {
@@ -33,13 +33,13 @@ describe('Update Albums', () => {
         .send({ name: 'something different', year: 1998 });
 
       expect(status).to.equal(200);
-
       expect(body).to.deep.equal({
         id: album[0].id,
         artist_id: artists[0].id,
         name: 'something different',
         year: 1998,
       });
+      
       const {
         rows: [artistData],
       } = await db.query(`SELECT * FROM Albums WHERE id = $1`, [body.id]);

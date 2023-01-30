@@ -17,7 +17,6 @@ describe('create album', () => {
       });
 
       it('creates a new album in the database', async () => {
-        console.log(`/artists/${artist.id}/albums`);
         const { status, body } = await request(app)
           .post(`/artists/${artist.id}/albums`)
           .send({
@@ -31,6 +30,7 @@ describe('create album', () => {
         const {
           rows: [albumData],
         } = await db.query(`SELECT * FROM Albums WHERE id = $1`, [body.id]);
+        
         expect(albumData.name).to.equal('Happier Than Ever');
         expect(albumData.year).to.equal(2021);
       });

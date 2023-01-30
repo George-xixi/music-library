@@ -21,8 +21,8 @@ describe('Delete Artist', () => {
         .send();
 
       expect(status).to.equal(200);
-
       expect(body).to.deep.equal({ id: 1, name: 'Tame Impala', genre: 'rock' });
+      
       const {
         rows: [artistData],
       } = await db.query(`SELECT * FROM Artists WHERE id = $1`, [body.id]);

@@ -38,18 +38,20 @@ describe('Delete Albums', () => {
         name: 'Currents',
         year: 2015,
       });
+      
       const {
         rows: [artistData],
       } = await db.query(`SELECT * FROM Albums WHERE id = $1`, [body.id]);
       expect(artistData).to.be.undefined;
     });
-  });
-  it('returns a 404 if the album does not exist', async () => {
-    const { status, body } = await request(app)
-      .delete('/albums/999999999')
-      .send();
 
-    expect(status).to.equal(404);
-    expect(body.message).to.equal('Album 999999999 does not exist');
+    it('returns a 404 if the album does not exist', async () => {
+      const { status, body } = await request(app)
+        .delete('/albums/999999999')
+        .send();
+
+      expect(status).to.equal(404);
+      expect(body.message).to.equal('Album 999999999 does not exist');
+    });
   });
 });
