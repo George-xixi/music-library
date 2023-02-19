@@ -38,12 +38,13 @@ touch .env.test
 ```
 
 In the .env files, these are the variables you need:
-PGUSER=
-PGHOST=
-PGPASSWORD=
-PGDATABASE=(make sure this is different in .env and .env.test)
-PGPORT=
-PORT=(optional, but this will default to 4000 if you don't choose)
+
+- PGUSER=
+- PGHOST=
+- PGPASSWORD=
+- PGDATABASE=(make sure this is different in .env and .env.test)
+- PGPORT=
+- PORT=(optional, but this will default to 4000 if you don't choose)
 
 5. To run tests:
 
