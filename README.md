@@ -7,13 +7,13 @@ This is a music libary API built with NODE JS, Express, interacting with Postgre
 
 ## Quick Start and Commands
 
-1. Clone the repo:
+### 1. Clone the repo:
 
 ```bash
 git clone https://github.com/george-xixi/music-library.git
 ```
 
-3. Install dependecies
+### 2. Install dependecies
 
 
 ```bash
@@ -26,7 +26,7 @@ The dev dependencies used here are:
 - mocha
 - supertest
 
-4. Create file with enviroment variables 
+### 3. Create file with enviroment variables 
 
 create .env and .env.test file in root directory 
 ```bash
@@ -46,13 +46,13 @@ In the .env files, these are the variables you need:
 - PGPORT=
 - PORT=(optional, but this will default to 4000 if you don't choose)
 
-5. To run tests:
+### 4. To run tests:
 
 ```bash
 npm test
 ```
 
-4. Download Postman and pgAdmin 
+### 5. Download Postman and pgAdmin 
 
 - [Postman](https://www.postman.com/downloads/)
 - [pgAdmin](https://www.pgadmin.org/download/)
