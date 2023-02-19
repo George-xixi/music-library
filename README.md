@@ -12,29 +12,20 @@ This is a music libary API built with NODE JS, Express, interacting with Postgre
 ```bash
 git clone https://github.com/george-xixi/music-library.git
 ```
-2. Initialise npm:
+
+3. Install dependecies
+
 
 ```bash
-npm init
+npm i 
 ```
 
-3. Install dev dependecies
+The dev dependencies used here are:
+- dotenv
+- chai
+- mocha
+- supertest
 
-The relevant dev dependencies are:
-
-```bash
-npm i -D dotenv
-```
-```bash
-npm i -D chai
-```
-
-```bash
-npm i -D mocha
-```
-```bash
-npm i -D supertest
-```
 4. Create file with enviroment variables 
 
 create .env and .env.test file in root directory 
